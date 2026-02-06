@@ -8,7 +8,13 @@ import orderData from './routes/orderData.js'
 const app = express();
 dotenv.config();
 const PORT = process.env.PORT;
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://foodie-lite.vercel.app",
+    "https://vishal2-gitstarted.github.io"
+  ],
+  credentials: true
+}));
 authenticate();
 
 app.use(express.json());
